@@ -14,7 +14,7 @@ public class OnePizzaMain {
     private static final Map<String, Integer> finalIngredients = new HashMap<>();
 
     private static void fillMaps() {
-        Path path = Paths.get("d_difficult.in.txt");
+        Path path = Paths.get("a_an_example.in.txt");
         List<String> list = fileToStringList(path);
 
         for (int i = 1; i <= Integer.parseInt(list.get(0)) * 2; i += 2) {
@@ -52,6 +52,8 @@ public class OnePizzaMain {
         for (String s : finalIngredients.keySet()) {
             result += s + " ";
         }
+
+        result = result.substring(0, result.length() - 1);
 
         if (Files.exists(path)) {
             try {
